@@ -1,0 +1,145 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  height: calc(100% - 2rem);
+}
+
+p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+p.p1 {
+  font-size: 2rem;
+  width: 30%;
+  margin-top: 0;
+}
+
+svg#nothing {
+  width: 100%;
+  height: auto;
+  filter: blur(0px);
+  opacity: 1;
+  animation-delay: 2000ms;
+  font-weight: 540;
+  line-height: 0.8em;
+  margin: 0px;
+  font-stretch: 25%;
+  animation: textBlur 6000ms ease-in forwards;
+  will-change: filter; /* performance hint */
+}
+
+#main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+}
+
+#nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 10%;
+}
+#nav h1,
+#nav a {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  font-stretch: 25%;
+}
+#nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #b3b3b3;
+}
+#nav a:hover {
+  color: black;
+}
+
+#text {
+  flex-wrap: wrap;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#text div.location {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+#text div.location p {
+  display: inline-block;
+}
+
+@keyframes textBlur {
+  from {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  to {
+    filter: blur(100px);
+    opacity: 0;
+  }
+}
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #nothing {
+    animation: none;
+  }
+}
+/* Mobile styles (less than 720px) */
+@media only screen and (max-width: 700px) {
+  #nav {
+    height: auto;
+    padding: 1rem;
+  }
+  #nav h1,
+  #nav a {
+    font-size: 0.9rem;
+  }
+  #main {
+    padding: 1rem;
+    height: 100%;
+  }
+  #text {
+    flex-direction: column;
+  }
+  #text div.location {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #text div.location p {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  p.p1 {
+    width: 70%;
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  p.p1 {
+    width: 70%;
+  }
+  div.location {
+    width: 100%;
+    justify-content: space-between;
+  }
+}/*# sourceMappingURL=style.css.map */
