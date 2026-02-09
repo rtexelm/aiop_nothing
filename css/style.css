@@ -25,6 +25,14 @@ p.p1 {
   margin-top: 0;
 }
 
+.grid-container-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+  max-width: 100%;
+}
+
 svg#nothing {
   width: 100%;
   height: auto;
@@ -44,6 +52,10 @@ svg#nothing {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.content {
+  padding: 2rem;
 }
 
 #nav {
@@ -216,15 +228,70 @@ svg#nothing {
 
 .essays {
   display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  gap: 4rem;
+}
+
+.essay-links {
+  display: flex;
   flex-flow: column nowrap;
+  width: 100%;
 }
 
 .essay-container {
+  flex: 0;
   display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  border-top: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+  background: rgba(217, 217, 217, 0);
+  transition: background 500ms ease-in-out;
+}
+.essay-container:hover {
+  background: #d9d9d9;
 }
 .essay-container a {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1; /* Places link above other content */
+}
+.essay-container p {
+  margin: 0.25rem 0.5rem 0.75rem;
+}
+.essay-container h3 {
+  margin: 0.75rem 0.5rem 0.25rem;
+}
+
+.author {
+  grid-column: 1/13;
+}
+
+#boros {
+  margin-top: 120px;
+  border-top: 2px solid #b5b5b5;
+}
+
+article.english {
+  grid-column: 1/7;
+  line-height: 32px;
+}
+
+article.arabic {
+  grid-column: 8/13;
+}
+
+.bio {
+  margin-top: 80px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.bio .name {
+  font-weight: 600;
 }
 
 @keyframes textBlur {
@@ -250,6 +317,22 @@ svg#nothing {
 @media (prefers-reduced-motion: reduce) {
   #nothing {
     animation: none;
+  }
+}
+/* Styles less than 1080 */
+@media only screen and (max-width: 1080px) {
+  p.p1 {
+    width: 70%;
+  }
+  div.location {
+    width: 100%;
+    justify-content: space-between;
+  }
+  article.english {
+    grid-column: 1/9;
+  }
+  article.arabic {
+    grid-column: 1/9;
   }
 }
 /* Mobile styles (less than 720px) */
@@ -278,17 +361,20 @@ svg#nothing {
     width: 100%;
     margin: 0;
   }
+  p {
+    font-size: 16px;
+  }
   p.p1 {
     width: 70%;
     font-size: 1.5rem;
   }
-}
-@media only screen and (max-width: 1080px) {
-  p.p1 {
-    width: 70%;
+  .bio {
+    font-size: 14px;
   }
-  div.location {
-    width: 100%;
-    justify-content: space-between;
+  article.english {
+    grid-column: 1/13;
+  }
+  article.arabic {
+    grid-column: 1/13;
   }
 }/*# sourceMappingURL=style.css.map */

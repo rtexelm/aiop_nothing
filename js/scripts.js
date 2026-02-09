@@ -27,7 +27,7 @@ class Carousel {
     this.autoPlayTimer = null;
 
     this.track = document.getElementById("carouselTrack");
-    this.indicatorsContainer = document.getElementById("indicators");
+    // this.indicatorsContainer = document.getElementById("indicators");
     this.prevBtn = document.getElementById("prevBtn");
     this.nextBtn = document.getElementById("nextBtn");
     this.statusDisplay = document.getElementById("autoplayStatus");
@@ -37,7 +37,7 @@ class Carousel {
 
   init() {
     this.createSlides();
-    this.createIndicators();
+    // this.createIndicators();
     this.attachEventListeners();
     this.startAutoPlay();
     this.updateCarousel();
@@ -52,18 +52,18 @@ class Carousel {
     });
   }
 
-  createIndicators() {
-    this.images.forEach((_, index) => {
-      const indicator = document.createElement("button");
-      indicator.className = "indicator";
-      indicator.setAttribute("aria-label", `Go to slide ${index + 1}`);
-      indicator.addEventListener("click", () => {
-        this.stopAutoPlay();
-        this.goToSlide(index);
-      });
-      this.indicatorsContainer.appendChild(indicator);
-    });
-  }
+  // createIndicators() {
+  //   this.images.forEach((_, index) => {
+  //     const indicator = document.createElement("button");
+  //     indicator.className = "indicator";
+  //     indicator.setAttribute("aria-label", `Go to slide ${index + 1}`);
+  //     indicator.addEventListener("click", () => {
+  //       this.stopAutoPlay();
+  //       this.goToSlide(index);
+  //     });
+  //     this.indicatorsContainer.appendChild(indicator);
+  //   });
+  // }
 
   attachEventListeners() {
     this.prevBtn.addEventListener("click", () => {
@@ -144,15 +144,15 @@ class Carousel {
   updateCarousel() {
     const offset = -this.currentIndex * 100;
     this.track.style.transform = `translateX(${offset}%)`;
-    this.updateIndicators();
+    // this.updateIndicators();
   }
 
-  updateIndicators() {
-    const indicators = this.indicatorsContainer.querySelectorAll(".indicator");
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index === this.currentIndex);
-    });
-  }
+  // updateIndicators() {
+  //   const indicators = this.indicatorsContainer.querySelectorAll(".indicator");
+  //   indicators.forEach((indicator, index) => {
+  //     indicator.classList.toggle("active", index === this.currentIndex);
+  //   });
+  // }
 
   startAutoPlay() {
     this.isAutoPlaying = true;
