@@ -43,7 +43,9 @@ svg#nothing {
   line-height: 0.8em;
   margin: 0px;
   font-stretch: 25%;
-  animation: 3000ms ease-in forwards textBlur, 3500ms ease-in-out 900ms forwards removal;
+  animation:
+    3000ms ease-in forwards textBlur,
+    3500ms ease-in-out 900ms forwards removal;
   will-change: filter; /* performance hint */
 }
 
@@ -101,11 +103,12 @@ svg#nothing {
 .carousel-container {
   position: relative;
   width: 100%;
+  max-height: 95vh;
   background: #f5f5f5;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin: 200px 0 2rem;
+  margin: 125px 0 2rem;
 }
 
 .carousel-wrapper {
@@ -138,7 +141,7 @@ svg#nothing {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .carousel-button {
@@ -195,7 +198,9 @@ svg#nothing {
   background: #ddd;
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .indicator:hover {
@@ -227,6 +232,7 @@ svg#nothing {
 }
 
 .essays {
+  margin-top: 5rem;
   display: flex;
   flex-flow: row nowrap;
   align-items: baseline;
@@ -377,4 +383,4 @@ article.arabic {
   article.arabic {
     grid-column: 1/13;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
