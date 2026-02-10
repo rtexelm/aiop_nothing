@@ -100,6 +100,10 @@ svg#nothing {
   display: inline-block;
 }
 
+/*
+* Carousel
+*/
+
 .carousel-container {
   position: relative;
   width: 100%;
@@ -108,7 +112,7 @@ svg#nothing {
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin: 125px 0 2rem;
+  margin-top: 125px;
 }
 
 .carousel-wrapper {
@@ -231,6 +235,18 @@ svg#nothing {
   background: rgba(255, 165, 0, 0.3);
 }
 
+#credit {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2rem;
+  text-align: right;
+  font-size: 8px;
+}
+
+/*
+* ESSAY LINKS
+*/
+
 .essays {
   margin-top: 5rem;
   display: flex;
@@ -300,6 +316,10 @@ article.arabic {
   font-weight: 600;
 }
 
+/*
+* animations
+*/
+
 @keyframes textBlur {
   from {
     filter: blur(0px);
@@ -319,13 +339,21 @@ article.arabic {
     display: none;
   }
 }
-/* Respect users who prefer reduced motion */
+
+/* 
+* Respect users who prefer reduced motion
+*/
+
 @media (prefers-reduced-motion: reduce) {
   #nothing {
     animation: none;
   }
 }
-/* Styles less than 1080 */
+
+/* 
+* Styles less than 1080 
+*/
+
 @media only screen and (max-width: 1080px) {
   p.p1 {
     width: 70%;
@@ -341,7 +369,11 @@ article.arabic {
     grid-column: 1/9;
   }
 }
-/* Mobile styles (less than 720px) */
+
+/* 
+* Mobile styles (less than 720px)
+*/
+
 @media only screen and (max-width: 700px) {
   #nav {
     height: auto;
